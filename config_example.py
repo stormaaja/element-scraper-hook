@@ -9,6 +9,7 @@ hooks = {
         "element_identifier_type": "class",
         "element_class": "someClass",
         "element_url": "http://www.example.com",
+        "parser_type": "html.parser",
         "hook_post_url": "http://some.hook.url/token=some-other-token"
     }
 }
