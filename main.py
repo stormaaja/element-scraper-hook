@@ -2,7 +2,7 @@
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-from restaurant_scraper import RestaurantScraper
+from element_scraper_hook_handler import ElementScraperHookHandler
 import config
 
 class ScraperServer(BaseHTTPRequestHandler):
@@ -13,13 +13,13 @@ class ScraperServer(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        # TODO validate token
+        # TODO handle hook with path in thread
         self._set_headers()
-        scraper = RestaurantScraper(config.restaurants)
-        current_lunch = scraper.get_current_lunch(self.path.replace("/", ""))
-        if current_lunch is not None:
-            self.wfile.write(current_lunch.encode())
-        else:
-            self.wfile.write("Not found".encode())
+        self.wfile.write("OK".encode())
+
+    def handle_element_hook(self, path):
+        handler = ElementScraperHookHandler(config.hooks)
 
 def run(server_class=HTTPServer, handler_class=ScraperServer, port=8000):
     server_address = ('', port)
