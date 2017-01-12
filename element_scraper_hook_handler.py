@@ -1,6 +1,6 @@
 import ElementScraper from element_scraper
 
-class ElementScraperHook:
+class ElementScraperHookHandler:
 
     def __init__(self, element_hooks):
         self.element_hooks = element_hooks
