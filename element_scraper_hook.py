@@ -1,3 +1,4 @@
+import ElementScraper from element_scraper
 
 class ElementScraperHook:
 
