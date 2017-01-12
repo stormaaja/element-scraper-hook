@@ -1,11 +1,14 @@
 server = {
-    "port": 8000
+    "port": 8000,
+    "token": "some-token",
+    "hook_post_url": "http://some.default-hook.url/token=some-other-token"
 }
 
-restaurants = {
-    "some_restaurant": {
-        "type": "table_class",
-        "element_class": "todayLunch",
-        "url": "http://www.example-restaurant.com"
+hooks = {
+    "/some-path": {
+        "element_identifier_type": "class",
+        "element_class": "someClass",
+        "element_url": "http://www.example.com",
+        "hook_post_url": "http://some.hook.url/token=some-other-token"
     }
 }
