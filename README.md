@@ -1,4 +1,8 @@
 # lunch-scraper
 Lunch scraper
 
-TODO
+Lunch menu scraper for local restaurants.
+
+In progress.
+
+License: [MIT](LICENSE)
