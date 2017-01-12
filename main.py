@@ -30,8 +30,4 @@ def run(server_class=HTTPServer, handler_class=ScraperServer, port=8000):
 if __name__ == "__main__":
     from sys import argv
 
-    if len(argv) == 1:
-        run(port=config.server["port"])
-    else:
-        scraper = RestaurantScraper(config.restaurants)
-        print(scraper.get_current_lunch(argv[1]))
+    run(port=config.server["port"])
